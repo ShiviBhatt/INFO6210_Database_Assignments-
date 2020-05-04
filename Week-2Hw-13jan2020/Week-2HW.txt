@@ -1,0 +1,184 @@
+Readings:
+
+Skim through chapter 1 “The Database Environment and Development Process” (Hoffer, Ramesh, & Topi)
+
+    Read chapter 2: “Modeling Data in the Organization” (Hoffer, Ramesh, & Topi)
+
+    Read chapter 3: “The enhanced E-R Model” (Hoffer, Ramesh, & Topi)
+
+Homework Assignment:
+
+    Chapter 2 (Hoffer, Ramesh, & Topi)
+
+        Problems and Exercises 1 (a, b,c,d,e,f), 2,4,5,6,11 (a,b,c,)
+
+    Chapter 3 (Hoffer, Ramesh, & Topi)
+
+        Problems and Exercises 1,2,12
+
+        ----------------
+1. 
+a. Where is a unary relationship, what does it mean, and for what reasons might the cardinalities on it be differ-
+ent in other organizations?
+
+---> In the diagram 2-22 of Pine Valley Furniture Company, An Entity EMPLOYEE shows unary relationship  ,it means that a relationship between instances of single entity type, unary relationship is also called recursive relationships. 
+-Each employee may have one supervisor.
+-Each employee(1) may supervise employees(Many) which is one to many relationship. Manager is not supervised. Also, all employees are not supervisiors(Managers)
+-Optional one to optional many cardinality is used  for this employee entity relationship.
+-In other organization cardinalities can be different because each organization can have there own business rules or policy defined.
+-Other organization can have different relationships and cardinalities defined such as a mandatory employee or many supervisors to a employee or may be no supervisors etc.
+
+
+
+
+
+
+b. Why is Includes a one-to many relationship, and why
+might this ever be different in some other organization?
+
+-As per the diagram of Pine Valley Furniture company has defined a business rule which states that PRODUCT LINE includes PRODUCT which is one to many relationship that means a product lines has many products but should have atleast a product because it has mandatory cardinality means one product line must have a product.
+
+- Another organization may have different business rule or policies established where  a product can have many product lines which is many to many relationships.
+- Another organization can also have one(Product Lines) to many(Product) relationship but cardinality may have minimal optional that is zero means many product is not associated with a product lines.
+
+c. Does Includes allow for a product to be represented in the database before it is assigned to a product line (e.g.,
+while the product is in research and development)?
+
+No, the cardinality in the figure shown is mandatory cardinality which means a product line must have the products. which is "atleast" scenario in other words, atleast one product line must have the product.
+In case of optional cardinality the product can be in research and development before it is assigned to a product line in the Database.
+
+
+
+
+d. If there is a rating of the competency for each skill an employee possesses, where in the data model would we
+place this rating?
+
+
+Employee rating comes from the competency in the skill he possess, so rating will be placed with Has Skill Associative Entity. because it will associate a instance of skill to a instance of an employee.
+
+e. What is the meaning of the DOES BUSINESS IN associa-
+tive entity, and why does each DOES BUSINESS IN instance have to be associated with exactly one TERRITORY and one CUSTOMER?
+
+- The meaning of Does BUSINESS in associative entity means a instance of a customer is associated with a instance of territory.
+-Each customer may do a business in any of the territory or may not do business in any of the territory.
+-A sales territory has one to many customer relationship
+-each  DOES BUSINESS IN instance have to be associated with exactly one territory and one customer because as per the Entity Relation diagram of the Pine Valley Furniture company the have business rules
+or policy defined for sales entity,  associative territory entity  and customer entity with mandatory cardinality 1.
+
+
+
+f. In what way might Pine Valley change the way it does business that would cause the Supplies associative entity to be eliminated and the relationships around it to
+change?
+
+To Eliminate Supplies associative entity from the Pine Valley furniture company diagram we need to create one to many relationship between RAW MATERIAL ENTITY(one) to VENDOR ENTITY (Many) and adding Supply Unit Price attribute to RAW MATERIAL entity beacuse particular vendor will supply a particular raw material.
+
+
+2. There is a bulleted list associated with Figure 2-22 that
+describes the entities and their relationships in Pine Valley Furniture. For each of the 10 points in the list, identify the subset of Figure 2-22 described by that point.
+
+
+a) PRODUCTS and PRODUCT LINES - Entity , RELATIONSHIP - INCLUDES, Mandatory one to Mandatory Many.
+b) CUSTOMER and ORDER - ENTITY , RELATIONSHIP - SUBMITS  , Mandatory one to Many.
+c) ORDERS and PRODUCTS - ENTITY, ORDER LINE - ASSOCIATIVE ENTITY.
+d) CUSTOMERS and TERRITORY- ENTITY , DOES BUSINESS IN - ASSOCIATIVE ENTITY.
+e) SALESPERSON and TERRITORY- ENTITY,   RELATIONSHIP - SERVES, Mandatory many to Mandatory one 
+f) PRODUCT and RAW MATERIAL - ENTITY, USES- ASSOCIATIVE ENTITY.
+g) VENDOR and RAW MATERIAL - ENTITY, SUPPLIES  - ASSOCIATIVE ENTITY.
+h) PRODUCT and WORK CENTER - ENTITY, PRODUCED IN- ASSOCIATIVE ENTITY 
+i) EMPLOYEE, WORK CENTER- ENTITY ,  WORKS IN - ASSOCIATIVE ENTITY 
+j) EMPLOYEE - ENTITY , RELATIONSHIP- SUPERVISES , Many to one
+
+
+
+4.
+4. Consider the two E-R diagrams in Figure 2-24, which repre- sent a database of community service agencies and volun- teers in two different cities (A and B). For each of the following three questions, place a check mark under City A, City B, or Can’t Tell for the choice that is the best answer.
+
+a) Can't Tell - As per the diagram of City A and City B there is no business rule defined to state how they are maintaining the data who currebtly assisting agencies, maintaining data as in volunteer working hours.
+b) City A - as per the diagram of City A shows that a volunteer can assist many agencies, 1 mandatory to Many optional relationship means there can be 0 to many volunteer.
+c) Can't Tell - There is no business rule can be seeen in the both ERD diagram where cardinality or relationship defined and ERD diagram does not states that a volunteer can change the agency which he/she assists.
+
+5.
+The entity type STUDENT has the following attributes: Student Name, Address, Phone, Age, Activity, and No of Years. Activity represents some campus-based student activity, and No of Years represents the number of years the student has engaged in this activity. A given student may engage in more than one activity. Draw an ERD for this situ- ation. What attribute or attributes did you designate as the identifier for the STUDENT entity? Why?
+
+Student Name : Key Attribute
+Phone : Simple Attribute
+Address: Simple Attribute
+Age : Derived Attribute
+Activity History : Multi-Valued Attribute
+Activity , NumberOfYears :  Composite Attribute
+
+StudentName is designated as the identifier for the STUDENT entity because there is no StudentID attribute is present other than that to identify student StudentName should be uniquely entered into the Database.
+
+
+6
+Are associative entities also weak entities? Why or why not? If yes, is there anything special about their “weakness”?
+No, Associative Entities are not considered as  weak entities.
+Associative Entities : 
+- Associate Entitiy types have their own simple identifier.
+-It is an Entity type that associates the instances of one or more entity types and contains attributes that are peculiar to the relationship between those entity instances.
+- Associative entities are sometimes referred to as gerunds, because the relationship name (a verb) is usually converted to an entity name that is noun.
+-The resulting associative entity type has independent meaning to end users and,
+preferably, can be identified with a single-attribute identifier.
+- The associative entity has one or more attributes in addition to the identifier.
+- The associative entity participates in one or more relationships independent of the
+entities related in the associated relationship
+
+If an associative entity meets above conditions then it cannot be called/considered as weak entity. While weak entity has following meaning and characteristics.
+
+Weak Entities:
+
+- A weak entity type is a entity type whose existance depends on some other entity type.
+- A weak entity type has no business meaning in the E-R diagram without the entity on which it depends.
+- The entity type on which the weak entity type depends is called identifying owner, A weak entity type does not typically have its own identifier.
+- A weak entity type has an attribute that serves a partial identifier.
+-A weak entity type is denoted as double lined rectangle, double underlined attribute is partial identifier which will be combined with the identifier of the owner to form a full identifier for weak entity.
+
+
+11. Figure 2-26 represents a situation of students who attend and work in schools and who also belong to certain clubs that are located in different schools. Study this diagram care- fully to try to discern what business rules are represented. 
+
+a. You will notice that cardinalities are not included on the
+Works For relationship. State a business rule for this relationship and then represent this rule with the cardi- nalities that match your rule.
+
+Answer : 
+Student Works for School 0:1 optional Many to optional 1
+School hires/employs student for work O:M optional 1 to optional Many
+
+Student : Minimum Cardinality = 0 , Max Cardinality = Many
+School : Minimum Cardinality = 0 , Max Cardinality = 1
+
+
+
+
+b. State a business rule that would make the Located In relationship redundant (i.e., where the school in which a club is located can be surmised or derived in some way from other relationships).
+
+To make Located In relationship redundant , we need to have club in the school and student may belong to that club only. In other words, student goes to that club only which is inside the school.
+
+
+c. Suppose a student could work for only a school that student attends but might not work. Would the Works For relationship still be necessary, or could you represent whether a student works for the school she attends in some other way (if so, how)?
+
+-Student works for a school which he/she attends , work is optional here. 
+- The Works for realtionship is necessary for the diagram since there are students who might work for the school. However, this policy will be harder to implement in database because it will be difficult to define such constraint.
+-Other way to design this business rule is that we can eliminate Works for relationship and place Works attribute in Student entity with boolean value Yes/No, this will ensure whether student is working in that school or not Or he/she is works for a school which he/she not attending.
+
+
+------------------------
+Chapter 3 questions 
+
+
+1. Examine the hierarchy for the university EER diagram (Figure 3-10). As a student, you are an instance of one of the subtypes: either UNDERGRAD STUDENT or GRADUATE STUDENT. List the names of all the attributes that apply to you. For each attribute, record the data value that applies to you.
+
+ATTRIBUTE NAME 
+
+
+
+2. Add a subtype discriminator for each of the supertypes shown in Figure 3-10. Show the discriminator values that assign instances to each subtype. Use the following subtype discriminator names and values:
+a. PERSON: Person Type (Employee? Alumnus? Student?)
+b. EMPLOYEE: Employee Type (Faculty, Staff)
+c. STUDENT: Student Type (Grad, Undergrad)
+
+
+12.A nonprofit organization depends on a number of different types of persons for its successful operation. The organization is interested in the following attributes for all of these persons: SSN, Name, Address, City/State/Zip, and Telephone. Three types of persons are of greatest interest: employees, volunteers, and donors. Employees have only a Date Hired attribute, and volunteers have only a Skill attribute. Donors have only a relationship (named Donates) with an Item entity type. A donor must have donated one or more items, and an item may have no donors, or one or more donors.
+There are persons other than employees, volunteers, and donors who are of interest to the organization, so that a person need not belong to any of these three groups. On the other hand, at a given time a person may belong to two or more of these groups (e.g., employee and donor).
+
+
+
